@@ -1,0 +1,70 @@
+.Rectangle-Copy {
+    width: auto;
+    height: 102px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color:#dedede;
+    padding-left: 135px;
+    padding-right: 135px;
+  }
+  /* .-User-List-Single-subnavbar {
+    width: auto;
+    background-color: #f5f5f5;
+    
+  } */
+  .breadcrumbEdit {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    /* background-color: #f5f5f5; */
+    border-radius: 4px;
+}
+.Dashboard {
+    width: auto;
+    height: 18px;
+    font-family: Heebo;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #8e44ad;
+    display: block;
+    
+  }
+  
+  .Dashboard .text-style-1 {
+    color: #34495e;
+  }
+  .Users-List {
+    width: 136px;
+    height: 44px;
+    font-family: Heebo;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #34495e;
+  }
+  .RectangleButton {
+    width: 115px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #8e44ad;
+    
+  }
+  .New-User {
+    width: 65px;
+    height: 22px;
+    font-family: Heebo;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
