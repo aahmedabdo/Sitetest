@@ -8,10 +8,10 @@ import {Global} from '../../Global/GlobalUrl'
 })
 export class ServicesService {
   GlobalUrl=Global.urls.GlobalUrl;
-
-  //Groups Url
-  UsersGetAllUrl = '/api/users?page=2';
-  GroupsGetOneUrl = 'api/Security/GroupsController/GetOne/';
+ 
+  //Users Url
+  UsersGetAllUrl = 'api/users?page=2';
+  UserGetOneUrl = 'api/users/';
   GroupsInsertUpdateDeleteUrl = 'api/Security/GroupsController/Post';
 
 
@@ -21,8 +21,8 @@ export class ServicesService {
   GetAllUsers() {
     return this.http.get(this.GlobalUrl + this.UsersGetAllUrl);
   }
-  GetOneGroups(Role_id: number) {
-    return this.http.get(this.GlobalUrl + this.GroupsGetOneUrl + Role_id);
+  GetOneUser(User_Id: number) {
+    return this.http.get(this.GlobalUrl + this.UserGetOneUrl + User_Id);
   }
   InsertGroups(Group) {
     return this.http.post(this.GlobalUrl + this.GroupsInsertUpdateDeleteUrl, Group)

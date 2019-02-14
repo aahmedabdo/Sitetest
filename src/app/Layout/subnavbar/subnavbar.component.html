@@ -2,35 +2,66 @@
   <section>
     <div>
       <ol class="breadcrumbEdit Dashboard text-style-1">
-        <li>
-          <i class="fa fa-dashboard"></i>Home</li>
-        <li>
-          <i class="fa fa-dashboard"></i>Dashboard
-        </li>
+        <span>Home / Dashboard</span>
       </ol>
-<!-- 
-      <strong class="Users-List">
-        User List
-      </strong> -->
-      <ul class="nav navbar-nav navbar-left">
-          <strong class="Users-List">
-              User List
-            </strong>
-        </ul>
+<span class="Users-List">User List</span>
       <ul class="nav navbar-nav navbar-right">
-          <button class="btn RectangleButton"> 
-              <i class="glyphicon glyphicon-plus">
-             </i>&nbsp; Add User</button>
+          <button data-toggle="modal" data-target="#myModal"  class="btn RectangleButton"> 
+              <span class="Path glyphicon-plus">
+             </span>&nbsp; 
+             <span class="New-User">New User</span></button>
         </ul>
-      <!-- <div>
-          <div>
-      <button class="btn RectangleButton"> 
-         <i class="glyphicon glyphicon-plus">
-        </i>&nbsp; Add User</button>
-
-          </div>
-      </div> -->
     </div>
 
   </section>
 </div>
+<!-- Modal -->
+<!-- Modale For Edit User -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog RectangleModale">
+      <!-- <img src='User.avatar' class="OvalModale"> -->
+      <img src="assets/img/icons-8-user.png"
+     srcset="assets/img/icons-8-user@2x.png 2x,
+     assets/img/icons-8-user@3x.png 3x"
+     class="icons8-user">
+      <form [formGroup]="form">
+          <div class="form-group">
+          <label for="Name" class="Name">
+            <span style="float: left;" *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+              <span class="errors" *ngIf="f.Name.errors.required" data-toggle="tooltip" data-placement="top">
+                InterUserName
+              </span>
+            </span>
+            User Name
+          </label>
+          <input type="text" formControlName="Name" [(ngModel)]="User.Name" class="Rectangle-5-Copy-19" placeholder="Username...." [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="Jobtitle" class="Job-title">
+            <span style="float: left;" *ngIf="submitted && f.Jobtitle.errors" class="invalid-feedback">
+              <span class="errors" *ngIf="f.Jobtitle.errors.required" data-toggle="tooltip" data-placement="top">
+                InterPassword
+              </span>
+            </span>
+            Job Title
+          </label>
+          <input type="text" formControlName="Jobtitle" [(ngModel)]="User.Jobtitle" class="Rectangle-5-Copy-19" placeholder="******" [ngClass]="{ 'is-invalid': submitted && f.Jobtitle.errors }"
+            required />
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-xs-6">
+            <button class="btn RectangleCancelButtonModale" (click)="closeModale()" data-dismiss="modal" type="submit">
+              <i class="Cancel">Cancel</i>
+            </button>
+          </div>
+          <div class="col-xs-6">
+            <button class="btn RectangleSaveButtonModale" (click)="onLogin()" type="submit">
+              <i class="Save">Save</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

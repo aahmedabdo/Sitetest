@@ -3,8 +3,8 @@
     height: 102px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     background-color:#dedede;
-    padding-left: 135px;
-    padding-right: 135px;
+    padding-left: 157px;
+    padding-right: 50px;
   }
   /* .-User-List-Single-subnavbar {
     width: auto;
@@ -30,7 +30,7 @@
     letter-spacing: normal;
     color: #8e44ad;
     display: block;
-    
+    padding-left: 0px;
   }
   
   .Dashboard .text-style-1 {
@@ -54,7 +54,8 @@
     border-radius: 20px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     background-color: #8e44ad;
-    
+    margin-right: 100px;
+
   }
   .New-User {
     width: 65px;
@@ -66,5 +67,10 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
+    color: #ffffff;
+  }
+  .Path {
+    width: 15px;
+    height: 15px;
     color: #ffffff;
   }

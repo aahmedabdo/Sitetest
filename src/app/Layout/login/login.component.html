@@ -1,50 +1,101 @@
-<div class="-Login">
+<!-- <div class="-Login">
 
-  <div class="Rectangle">
-      <div class="Welcome-back">Welcome back!</div>
-<div class="Please-login-to-acce">
-    Please login to access your <strong class="text-style-1">Spaces</strong> Dashboard
-    <form>
-        <div class="form-group">
-            <label for="UserCode" class="Username">
-                    <span  style="float: left;" *ngIf="submitted && f.UserCode.errors" class="invalid-feedback">
-                  <span class="errors" *ngIf="f.UserCode.errors.required" data-toggle="tooltip" data-placement="top">
-                        InterUserName
-                </span> 
-                    </span>
-                     User Name
-                </label>
-            <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserCode.errors }" required />
-        </div> 
-        <div class="form-group">
-            <label for="Password">
-                    <span  style="float: left;" *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-                  <span class="errors" *ngIf="f.Password.errors.required" data-toggle="tooltip" data-placement="top">
-                      InterPassword
-                </span> 
-                    </span>
-                     Password Login
-                </label>
-            <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required />
-        </div> 
-<div class="row">
-<!-- /.col -->
-<div class="col-xs-6">
-  <button class="btn btn-primary btn-block btn-flat" (click)="onLogin()" type="submit">Login</button>
-</div>
-<!-- /.col -->
-<div>
-    <div>
-      <label>
-        <input type="checkbox"> Remember
-      </label>
-    </div>
-  </div>
-</div>
-</form>
+  <div class="Rectanglediv">
+<div class="container_login">
+        <div class="Welcome-back">Welcome back!</div>
+        <div class="Please-login-to-acce">
+            Please login to access your <strong class="text-style-1">Spaces</strong> Dashboard
+            <form>
+                <div class="form-group">
+                    <label for="UserCode" class="Username">
+                            <span  style="float: left;" *ngIf="submitted && f.UserCode.errors" class="invalid-feedback">
+                          <span class="errors" *ngIf="f.UserCode.errors.required" data-toggle="tooltip" data-placement="top">
+                                InterUserName
+                        </span> 
+                            </span>
+                             User Name
+                        </label>
+                    <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserCode.errors }" required />
+                </div> 
+                <div class="form-group">
+                    <label for="Password">
+                            <span  style="float: left;" *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                          <span class="errors" *ngIf="f.Password.errors.required" data-toggle="tooltip" data-placement="top">
+                              InterPassword
+                        </span> 
+                            </span>
+                             Password Login
+                        </label>
+                    <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required />
+                </div> 
+        <div class="row">
+        <div class="col-xs-6">
+          <button class="btn btn-primary btn-block btn-flat" (click)="onLogin()" type="submit">Login</button>
+        </div>
+        <div>
+            <div>
+              <label>
+                <input type="checkbox"> Remember
+              </label>
+            </div>
+          </div>
+        </div>
+        </form>
+        </div>
 </div>
     <img src="assets/img/rectangle-copy.png"srcset="assets/img/rectangle-copy@2x.png 2x,assets/img/rectangle-copy@3x.png 3x"
-    class="RectangleImage-Copy">
+    class="Rectangle-Copy">
   </div>
 </div>
-
+ -->
+<div class="container">
+    <div class="-Login">
+<div class="Rectanglediv">
+        <img src="assets/img/rectangle-copy.png"srcset="assets/img/rectangle-copy@2x.png 2x,assets/img/rectangle-copy@3x.png 3x"
+        class="Rectangle-Copy">
+        <div>
+                <h1 class="Welcome-back">Welcome back!</h1>
+                <div class="Please-login-to-acce">
+            Please login to access your <strong class="text-style-1">Spaces</strong> Dashboard
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label for="UserCode" class="Username">
+                            <span  style="float: left;" *ngIf="submitted && f.UserCode.errors" class="invalid-feedback">
+                          <span class="errors" *ngIf="f.UserCode.errors.required" data-toggle="tooltip" data-placement="top">
+                                InterUserName
+                        </span> 
+                            </span>
+                             User Name
+                        </label>
+                    <input  type="text" class="form-control" placeholder="Username...." [ngClass]="{ 'is-invalid': submitted && f.UserCode.errors }" required />
+                </div> 
+                <div class="form-group">
+                    <label for="Password" class="Password">
+                            <span  style="float: left;" *ngIf="submitted && f.Password.errors" class="invalid-feedback">
+                          <span class="errors" *ngIf="f.Password.errors.required" data-toggle="tooltip" data-placement="top">
+                              InterPassword
+                        </span> 
+                            </span>
+                             Password
+                        </label>
+                    <input  type="password" class="form-control" placeholder="******" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required />
+                </div> 
+        <div class="row">
+                <div  class="col-xs-6">
+                        <label class="Forgot-password">
+                          <a>Forgot password?</a> 
+                        </label>
+                    </div>
+        <div class="col-xs-6">
+          <button class="btn Rectanglebyttunlogin" (click)="onLogin()" type="submit">
+              <i class="LOGIN">Login</i></button>
+        </div>
+       
+        </div>
+        </form>
+        </div>
+        </div>
+</div>
+    </div>
+</div>

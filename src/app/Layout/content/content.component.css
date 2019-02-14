@@ -6,10 +6,12 @@
     padding-right: 135px;
     padding-top: 30px;
     padding-bottom: 172px;
+    margin-left: 27px;
+
   }
 
   .RectangleBefore {
-    width: 1440px;
+     /* width: 1244px; */
     height: 650px;
     border-radius: 10px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -22,6 +24,8 @@
     border-radius: 10px;
     box-shadow: -2px 0 4px 0 rgba(0, 0, 0, 0.2);
     background-color: #f5f5f5;
+    float: right;
+    margin-top: -586px;
   }
   .Oval {
     width: 125px;
@@ -30,9 +34,10 @@
   .Ovalimagelist {
     width: 55px;
     height: 55px;
+    border-radius: 50%;
   }
   .Elwin-Sharvill {
-    width: 150px;
+    width: 155px;
     height: 37px;
     font-family: Heebo;
     font-size: 25px;
@@ -42,22 +47,23 @@
     line-height: normal;
     letter-spacing: normal;
     color: #34495e;
+    margin-left: 56px;
+    margin-right: 56px;
+    margin-top: 5px;
   }
   .RectangleEdit {
-    width: 110px;
-    height: 40px;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    background-color: #8e44ad;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #ffffff;
   }
   .RectangleDelete {
-    width: 110px;
-    height: 40px;
-    border-radius: 20px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    background-color: #f5f5f5;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #ffffff;
   }
-  .icons8-edit-copy-3 {
+  .icons8-edit {
     width: 15px;
     height: 15px;
     object-fit: contain;
@@ -74,7 +80,7 @@
     letter-spacing: normal;
     color: #ffffff;
   }
-  .icons8-delete-copy-3 {
+  .icons8-delete {
     width: 12px;
     height: 15px;
     object-fit: contain;
@@ -107,7 +113,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #7f8c8d;
-    margin-left: 30px;
+    margin-left: 5px;
 
   }
   .Actions {
@@ -121,17 +127,18 @@
     line-height: normal;
     letter-spacing: normal;
     color: #7f8c8d;
-    margin-left: 1140px;
+    /* margin-left: 1140px; */
     float: right;
-    margin-right: 50px;
+    margin-right: 55px;
 
 
   }
   .Rectangle-Copy-2 {
-    width: 1140px;
+    /* width: 1140px; */
     height: 85px;
     border-radius: 10px;
     background-color: #ffffff;
+
   }
   .Vladimir-Usov {
     width: 94px;
@@ -151,7 +158,7 @@
     border-radius: 3px;
     background-color: #ffffff;
     border: 1px solid #8e44ad;
-    margin-left: 1140px;
+    /* margin-left: 1140px; */
   }
   .RectangleDeleteButton-Copy-3 {
     width: 30px;
@@ -169,7 +176,7 @@
     width: 9px;
     height: 14px;
     object-fit: contain;
-    margin-left: 49px;
+    margin-left: 35px;
     /* float: right; */
   }
   .RectangleHover-Copy-2 {
@@ -200,23 +207,66 @@
     }
     /* single User */
   .RectangleAfter {
-        width: 1170px;
+        width: 880px;
         height: 567px;
         border-radius: 10px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
         background-color: #ffffff;
       }
       /* User Side */
-      .RectangleSingleUser-Copy-4 {
-        width: 262px;
-        height: 567px;
-        border-radius: 10px;
-        box-shadow: -2px 0 4px 0 rgba(0, 0, 0, 0.2);
+      .RectangleSingleUserEdit {
+        width: 110px;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        background-color: #8e44ad;
+        margin-left: 12px;
+
+      }
+      .RectangleSingleUserDelete {
+        width: 110px;
+        height: 40px;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
         background-color: #f5f5f5;
       }
-      td:active{
+      /* td:hover{
         width: 1140px;
         height: 85px;
         border-radius: 10px;
         background-color: rgba(142, 68, 173, 0.05);
+      } */
+      td:active{
+        background-color: #8e44ad;
       }
+.ButtonTable{
+  margin-right: 0px;
+
+  float: right;
+}
+.imageSingle{
+  margin-left: 83px;
+  margin-right: -8px;
+  margin-top: 55px;
+  border-radius: 50%;
+}
+.icons8-delete_sign {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  float: right;
+  margin-left: 3px;
+  margin-right: 9px;
+  margin-top: 9px
+}
+.icons8-edit-copy-3 {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+.icons8-delete-copy-3 {
+  width: 12px;
+  height: 15px;
+  object-fit: contain;
+}
+

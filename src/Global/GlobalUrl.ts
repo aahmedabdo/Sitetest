@@ -1,5 +1,5 @@
 export let Global = {
     urls: {
-        GlobalUrl:'https://reqres.in'  
+        GlobalUrl:'https://reqres.in/'  
     }
 }
