@@ -28,9 +28,6 @@ import { LookupService } from './Services/lookup-service.service';
     ReactiveFormsModule,
     NgxUiLoaderModule,
     RouteRoutingModule
-    
-
-
   ],
   providers: [ServicesService,LookupService],
   bootstrap: [AppComponent]

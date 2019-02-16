@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../Layout/login/login.component';
 import { ContentComponent } from '../Layout/content/content.component';
 
-
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'Sign-in',component:LoginComponent},
