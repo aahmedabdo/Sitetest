@@ -5,21 +5,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Layout/header/header.component';
-import { FooterComponent } from './Layout/footer/footer.component';
-import { SliderComponent } from './Layout/slider/slider.component';
-import { SidebarComponent } from './Layout/sidebar/sidebar.component';
 import { SubnavbarComponent } from './Layout/subnavbar/subnavbar.component';
 import { ContentComponent } from './Layout/content/content.component';
 import { ServicesService } from './Services/services.service';
 import { LoginComponent } from './Layout/login/login.component';
+import { NgxUiLoaderModule } from  'ngx-ui-loader';
+import { RouteRoutingModule } from './Routing/route-routing.module';
+import { LookupService } from './Services/lookup-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    SliderComponent,
-    SidebarComponent,
     SubnavbarComponent,
     ContentComponent,
     LoginComponent
@@ -28,10 +25,14 @@ import { LoginComponent } from './Layout/login/login.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    NgxUiLoaderModule,
+    RouteRoutingModule
+    
+
 
   ],
-  providers: [ServicesService],
+  providers: [ServicesService,LookupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

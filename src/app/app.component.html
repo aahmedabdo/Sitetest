@@ -1,6 +1,10 @@
-<header></header>
-<subnavbar></subnavbar>
-<content></content>
+<header *ngIf="isUserLoggedIn"></header>
+<subnavbar *ngIf="isUserLoggedIn"></subnavbar>
+<!-- <ngx-ui-loader></ngx-ui-loader>
+<content></content> -->
 <!-- <login></login> -->
+
+<router-outlet>
+        <ngx-ui-loader></ngx-ui-loader></router-outlet>
 
 

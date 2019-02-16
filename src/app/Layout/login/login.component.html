@@ -1,101 +1,60 @@
-<!-- <div class="-Login">
-
-  <div class="Rectanglediv">
-<div class="container_login">
-        <div class="Welcome-back">Welcome back!</div>
-        <div class="Please-login-to-acce">
-            Please login to access your <strong class="text-style-1">Spaces</strong> Dashboard
-            <form>
-                <div class="form-group">
-                    <label for="UserCode" class="Username">
-                            <span  style="float: left;" *ngIf="submitted && f.UserCode.errors" class="invalid-feedback">
-                          <span class="errors" *ngIf="f.UserCode.errors.required" data-toggle="tooltip" data-placement="top">
-                                InterUserName
-                        </span> 
-                            </span>
-                             User Name
-                        </label>
-                    <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserCode.errors }" required />
-                </div> 
-                <div class="form-group">
-                    <label for="Password">
-                            <span  style="float: left;" *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-                          <span class="errors" *ngIf="f.Password.errors.required" data-toggle="tooltip" data-placement="top">
-                              InterPassword
-                        </span> 
-                            </span>
-                             Password Login
-                        </label>
-                    <input  type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required />
-                </div> 
-        <div class="row">
-        <div class="col-xs-6">
-          <button class="btn btn-primary btn-block btn-flat" (click)="onLogin()" type="submit">Login</button>
-        </div>
-        <div>
-            <div>
-              <label>
-                <input type="checkbox"> Remember
-              </label>
-            </div>
-          </div>
-        </div>
-        </form>
-        </div>
-</div>
-    <img src="assets/img/rectangle-copy.png"srcset="assets/img/rectangle-copy@2x.png 2x,assets/img/rectangle-copy@3x.png 3x"
-    class="Rectangle-Copy">
-  </div>
-</div>
- -->
 <div class="container">
     <div class="-Login">
-<div class="Rectanglediv">
-        <img src="assets/img/rectangle-copy.png"srcset="assets/img/rectangle-copy@2x.png 2x,assets/img/rectangle-copy@3x.png 3x"
-        class="Rectangle-Copy">
-        <div>
+        <div class="Rectanglediv">
+            <img src="assets/img/rectangle-copy.png" srcset="assets/img/rectangle-copy@2x.png 2x,assets/img/rectangle-copy@3x.png 3x"
+                class="Rectangle-Copy">
+            <div>
                 <h1 class="Welcome-back">Welcome back!</h1>
                 <div class="Please-login-to-acce">
-            Please login to access your <strong class="text-style-1">Spaces</strong> Dashboard
-            <hr>
-            <form>
-                <div class="form-group">
-                    <label for="UserCode" class="Username">
-                            <span  style="float: left;" *ngIf="submitted && f.UserCode.errors" class="invalid-feedback">
-                          <span class="errors" *ngIf="f.UserCode.errors.required" data-toggle="tooltip" data-placement="top">
-                                InterUserName
-                        </span> 
-                            </span>
-                             User Name
-                        </label>
-                    <input  type="text" class="form-control" placeholder="Username...." [ngClass]="{ 'is-invalid': submitted && f.UserCode.errors }" required />
-                </div> 
-                <div class="form-group">
-                    <label for="Password" class="Password">
-                            <span  style="float: left;" *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-                          <span class="errors" *ngIf="f.Password.errors.required" data-toggle="tooltip" data-placement="top">
-                              InterPassword
-                        </span> 
-                            </span>
-                             Password
-                        </label>
-                    <input  type="password" class="form-control" placeholder="******" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required />
-                </div> 
-        <div class="row">
-                <div  class="col-xs-6">
-                        <label class="Forgot-password">
-                          <a>Forgot password?</a> 
-                        </label>
-                    </div>
-        <div class="col-xs-6">
-          <button class="btn Rectanglebyttunlogin" (click)="onLogin()" type="submit">
-              <i class="LOGIN">Login</i></button>
+                    Please login to access your
+                    <strong class="text-style-1">Spaces</strong> Dashboard
+                    <hr>
+                    <form [formGroup]="form">
+                        <div class="form-group">
+                            <label for="email" class="Username">
+                                <span *ngIf="submitted && f.email.errors" class="errors invalid-feedback">
+                                    <span *ngIf="f.email.errors.required" data-toggle="tooltip" data-placement="top">
+                                        *
+                                    </span>
+                                    <span *ngIf="f.email.errors.email" data-toggle="tooltip" data-placement="top">
+                                        Email must be a valid email address
+                                    </span>
+                                </span>
+                                Email
+                            </label>
+                            <input type="text" formControlName="email" [(ngModel)]="Login.email" class="form-control" placeholder="ahm@yahoo.com" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="password">
+                                <span *ngIf="submitted && f.password.errors" class="errors invalid-feedback">
+                                    <span *ngIf="f.password.errors.required" data-toggle="tooltip" data-placement="top">
+                                        *
+                                    </span>
+                                </span>
+                                Password
+                            </label>
+                            <input type="password" formControlName="password" [(ngModel)]="Login.password" class="form-control" placeholder="******"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required />
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label (click)="newUser()" class="Forgot-password">
+                                    <a>New User?</a>
+                                </label>
+                            </div>
+                            <div class="col-xs-6">
+                                <button *ngIf="!isNew" class="btn Rectanglebyttunlogin" (click)="onLogin()" type="submit">
+                                    <i class="LOGIN">Login</i>
+                                </button>
+                                <button *ngIf="isNew" class="btn Rectanglebyttunlogin" (click)="onRegister()" type="submit">
+                                    <i class="LOGIN">Create</i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-       
-        </div>
-        </form>
-        </div>
-        </div>
-</div>
     </div>
 </div>

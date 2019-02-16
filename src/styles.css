@@ -15,13 +15,15 @@
     border-radius: 10px;
     background-color: #ffffff;
     margin-top: 100px;
-  
+    margin-left: auto;
+
   }
   .OvalModale {
     width: 100px;
     height: 100px;
     margin-top: -58px;
     margin-left: 135px;
+    border-radius: 50%;
     /* background-color: #7f8c8d; */
   }
   .icons8-user {
@@ -58,11 +60,11 @@
     background-color: #ffffff;
   }
   .Job-title {
-    width: 51px;
+    /* width: 51px; */
     height: 21px;
     font-family: Heebo;
     font-size: 14px;
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
@@ -151,4 +153,9 @@
     /* margin-top: -58px;
     margin-left: 135px; */
     background-color: #7f8c8d;
+  }
+  .errors{
+    color: red;
+    float: right;
+    margin-left: 3px;
   }

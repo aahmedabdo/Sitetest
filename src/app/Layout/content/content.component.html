@@ -1,5 +1,6 @@
 <div class="-User-List">
   <div>
+    <!-- list User -->
     <table [ngClass]="{'RectangleAfter' : isRetiveData, 'RectangleBefore': !isRetiveData}" class="RectangleAfter table">
       <thead>
         <tr>
@@ -12,6 +13,7 @@
         </tr>
       </thead>
       <tbody>
+        <!-- looping for list user -->
         <tr *ngFor="let item of Users.data">
           <td (click)="ShowUser(item)">
             <img src='{{item.avatar}}' class="Ovalimagelist"> &nbsp;
@@ -20,12 +22,13 @@
             </label>
             <div class="row btn ButtonTable">
               <span class="RectangleEditButton">
-                <img src="assets/img/icons-8-edit.png" srcset="assets/img/icons-8-edit@2x.png 2x,img/icons-8-edit@3x.png 3x" class="icons8-edit">
+                <img src="assets/img/icons-8-edit.png" srcset="assets/img/icons-8-edit@2x.png 2x
+                ,img/icons-8-edit@3x.png 3x" class="icons8-edit">
               </span>
               &nbsp;
               <span class="RectangleDelete">
-                <img src="assets/img/icons-8-delete.png" (click)="ShowUser(item)" srcset="assets/img/icons-8-delete@2x.png 2x,img/icons-8-delete@3x.png 3x"
-                  class="icons8-delete">
+                <img src="assets/img/icons-8-delete.png" (click)="ShowUser(item)" srcset="assets/img/icons-8-delete@2x.png 2x,
+                 img/icons-8-delete@3x.png 3x" class="icons8-delete">
               </span>
               <a>
                 <img src="assets/img/icons-8-right-4.png" srcset="assets/img/icons-8-right-4@2x.png 2x,img/icons-8-right-4@3x.png 3x" class="icons8-right_4">
@@ -33,96 +36,72 @@
             </div>
           </td>
         </tr>
+        <!-- tap for show user for update -->
+        <div *ngIf="isRetiveData" class="Rectangle-Copy-4">
+          <img (click)="CloseSingleUser()" src="assets/img/icons-8-delete-sign.png" srcset="assets/img/icons-8-delete-sign@2x.png 2x,
+          assets/img/icons-8-delete-sign@3x.png 3x" class="icons8-delete_sign">
+          <img src='{{Photo}}' class="imageSingle">
+          <div class="Elwin-Sharvill">
+            {{FullName}}
+          </div>
+          <!-- button for edit user retrive data and open Edit popup -->
+          <button data-toggle="modal" data-target="#myModal" class="btn RectangleSingleUserEdit">
+            <span>
+              <img src="assets/img/icons-8-edit-copy-3.png" srcset="assets/img/icons-8-edit-copy-3@2x.png 2x,
+            assets/img/icons-8-edit-copy-3@3x.png 3x" class="icons8-edit-copy-3">
+            </span>
+            &nbsp;
+            <span class="Edit">Edit</span>
+          </button>
+          &nbsp; &nbsp;
+          <!-- button for Delete user -->
+          <button data-toggle="modal" data-target="#myModalDelete" class="btn RectangleSingleUserDelete">
+            <span>
+              <img src="assets/img/icons-8-delete.png" srcset="assets/img/icons-8-delete@2x.png 2x,assets/img/icons-8-delete@3x.png 3x"
+                class="icons8-delete-copy-3">
+            </span>
+            &nbsp;
+            <span class="Delete">Delete</span>
+          </button>
+        </div>
+        <!-- button loader more user -->
         <div class="center">
-          <img src="assets/img/icons-8-spinner-frame-1.png" srcset="assets/img/icons-8-spinner-frame-1@2x.png 2x,img/icons-8-spinner-frame-1@3x.png 3x"
-            class="icons8-spinner_frame_1">
-          <div class="Loading-more-users center">Loading more users</div>
+          <img *ngIf="isLoadingMore" src="assets/img/Loading.gif" />
+          <div (click)="LoadMore()" class="btn Loading-more-users center">Loading more users</div>
         </div>
       </tbody>
     </table>
-    <div *ngIf="isRetiveData" class="Rectangle-Copy-4">
-      <img (click)="CloseSingleUser()" src="assets/img/icons-8-delete-sign.png" srcset="assets/img/icons-8-delete-sign@2x.png 2x,
-        assets/img/icons-8-delete-sign@3x.png 3x" class="icons8-delete_sign">
-
-      <img src='{{Photo}}' class="imageSingle">
-      <div class="Elwin-Sharvill">
-        {{FullName}}
-      </div>
-      <button data-toggle="modal" data-target="#myModal" (click)="ShowEditUser(User_Id)" class="btn RectangleSingleUserEdit">
-        <span>
-          <img src="assets/img/icons-8-edit-copy-3.png" srcset="assets/img/icons-8-edit-copy-3@2x.png 2x,
-                assets/img/icons-8-edit-copy-3@3x.png 3x" class="icons8-edit-copy-3"> </span>
-        &nbsp;
-        <span class="Edit">Edit</span>
-      </button>
-      &nbsp; &nbsp;
-      <button data-toggle="modal" data-target="#myModalDelete" class="btn RectangleSingleUserDelete">
-        <span>
-          <img src="assets/img/icons-8-delete.png" srcset="assets/img/icons-8-delete@2x.png 2x,assets/img/icons-8-delete@3x.png 3x"
-            class="icons8-delete-copy-3">
-        </span>
-        &nbsp;
-        <span class="Delete">Delete</span>
-      </button>
-    </div>
   </div>
 </div>
 <!-- Modal -->
 <!-- Modale For Edit User -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog RectangleModale">
-    <img src='{{User.avatar}}' class="OvalModale">
+    <img src='{{Photo}}' class="OvalModale">
     <form [formGroup]="form">
-        <div class="form-group">
-        <label for="Name" class="Name">
-          <span style="float: left;" *ngIf="submitted && f.Name.errors" class="invalid-feedback">
-            <span class="errors" *ngIf="f.Name.errors.required" data-toggle="tooltip" data-placement="top">
-              InterUserName
+      <div class="form-group">
+        <label for="name" class="Job-title">
+          <span *ngIf="submitted && f.name.errors" class="errors invalid-feedback">
+            <span *ngIf="f.name.errors.required" data-toggle="tooltip" data-placement="top">
+              *
             </span>
           </span>
           User Name
         </label>
-        <input type="text" formControlName="Name" [(ngModel)]="User.Name" class="Rectangle-5-Copy-19" placeholder="Username...." [ngClass]="{ 'is-invalid': submitted && f.Name.errors }"
-          required />
+        <input type="text" formControlName="name" [(ngModel)]="User.name" class="Rectangle-5-Copy-19" placeholder="Username...."
+          [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required />
       </div>
       <div class="form-group">
-        <label for="Jobtitle" class="Job-title">
-          <span style="float: left;" *ngIf="submitted && f.Jobtitle.errors" class="invalid-feedback">
-            <span class="errors" *ngIf="f.Jobtitle.errors.required" data-toggle="tooltip" data-placement="top">
-              InterPassword
+        <label for="job" class="Job-title">
+          <span *ngIf="submitted && f.job.errors" class="errors invalid-feedback">
+            <span *ngIf="f.job.errors.required" data-toggle="tooltip" data-placement="top">
+              *
             </span>
           </span>
           Job Title
         </label>
-        <input type="text" formControlName="Jobtitle" [(ngModel)]="User.Jobtitle" class="Rectangle-5-Copy-19" placeholder="******" [ngClass]="{ 'is-invalid': submitted && f.Jobtitle.errors }"
+        <input type="text" formControlName="job" [(ngModel)]="User.job" class="Rectangle-5-Copy-19" placeholder="Leader" [ngClass]="{ 'is-invalid': submitted && f.job.errors }"
           required />
-      </div>
-      <br />
-      <div class="row">
-        <div class="col-xs-6">
-          <button class="btn RectangleCancelButtonModale" (click)="closeModale()" data-dismiss="modal" type="submit">
-            <i class="Cancel">Cancel</i>
-          </button>
-        </div>
-        <div class="col-xs-6">
-          <button class="btn RectangleSaveButtonModale" (click)="onLogin()" type="submit">
-            <i class="Save">Save</i>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<!-- Modale For Delete User -->
-<div class="modal fade" id="myModalDelete" role="dialog">
-  <div class="modal-dialog RectangleModaleDelete">
-    <form class="formModale">
-      <div>
-        <span class="Are-you-sure-you-wan">
-          Are you sure you want to delete
-        </span>
-        <br /><br />
-        <span class="ElwinSharvillModaleEdit">UserName</span>
       </div>
       <br />
       <div class="row">
@@ -132,7 +111,37 @@
           </button>
         </div>
         <div class="col-xs-6">
-          <button class="btn RectangleSaveButtonModale" (click)="onLogin()" type="submit">
+          <button (click)="UpdateUser()" class="btn RectangleSaveButtonModale" type="submit">
+            <i *ngIf="!isClickUpdate" class="Save">Update</i>
+            <img *ngIf="isClickUpdate" src="assets/img/Loading.gif" />
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Modale For Delete User -->
+<!-- popup retrive data for confirm delete user -->
+<div class="modal fade" id="myModalDelete" role="dialog">
+  <div class="modal-dialog RectangleModaleDelete">
+    <form class="formModale">
+      <div>
+        <span class="Are-you-sure-you-wan">
+          Are you sure you want to delete
+        </span>
+        <br />
+        <br />
+        <span class="ElwinSharvillModaleEdit">{{FullName}}</span>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn RectangleCancelButtonModale" data-dismiss="modal" type="submit">
+            <i class="Cancel">Cancel</i>
+          </button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn RectangleSaveButtonModale" (click)="DeleteUser(User_Id)" data-dismiss="modal" type="submit">
             <i class="Save">Save</i>
           </button>
         </div>
